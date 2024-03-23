@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero vs Dragons</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        padding: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hero vs Dragons</h2>
+    <button onclick="fight()">Fight Dragons</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function fight() {
+    const heroPower = Math.floor(Math.random() * 100) + 1; 
+    const dragonPower = Math.floor(Math.random() * 100) + 1; 
+    
+    let result;
+    if (heroPower > dragonPower) {
+        result = "Hero defeated the dragon!";
+    } else if (heroPower < dragonPower) {
+        result = "Dragon defeated the hero!";
+    } else {
+        result = "It's a tie!";
+    }
+
+    document.getElementById("result").innerText = result;
+}
+</script>
+
+</body>
+</html>

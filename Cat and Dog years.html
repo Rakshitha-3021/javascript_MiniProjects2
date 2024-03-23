@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat and Dog Years</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        padding: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Cat and Dog Years</h2>
+    <button onclick="convertYears()">Convert Years</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function calculateHumanYears(catYears, dogYears) {
+    const humanYears = catYears * 4 + dogYears * 5;
+    return humanYears;
+}
+
+function convertYears() {
+    const catYears = parseInt(prompt('Enter cat years:'));
+    const dogYears = parseInt(prompt('Enter dog years:'));
+
+    if (isNaN(catYears) || isNaN(dogYears) || catYears < 0 || dogYears < 0) {
+        alert('Please enter valid positive numbers for cat and dog years.');
+        return;
+    }
+
+    const humanYears = calculateHumanYears(catYears, dogYears);
+    document.getElementById("result").innerText = 'Cat and dog years combined equals ' + humanYears + ' human years.';
+}
+</script>
+
+</body>
+</html>

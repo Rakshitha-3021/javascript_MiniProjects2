@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Count Sheep</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Count Sheep</h2>
+
+    <p>Click the button to count the sheep:</p>
+    <button onclick="countSheep()">Count</button>
+
+    <p id="count"></p>
+</div>
+
+<script>
+let sheepCount = 0;
+
+function countSheep() {
+    sheepCount++;
+    document.getElementById("count").innerText = "Sheep counted: " + sheepCount;
+}
+</script>
+
+</body>
+</html>

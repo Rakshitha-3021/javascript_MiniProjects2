@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smallest Integer in Array</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid black;
+        padding: 50px;
+    }
+    .find-smallest-button {
+        background-color: black; /* Blue */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .find-smallest-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Smallest Integer in Array</h2>
+
+    <p>Enter comma-separated numbers:</p>
+    <input type="text" id="numberInput">
+    <button class="find-smallest-button" onclick="findSmallestInteger()">Find Smallest</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function findSmallestInt(arrayOfNumbers) {
+    let smallestNumber;
+    for (let i = 0; i < arrayOfNumbers.length; i++) {
+        const arrNumber = arrayOfNumbers[i];
+        if (i === 0) {
+            smallestNumber = arrNumber;
+        }
+        if (arrNumber < smallestNumber) {
+            smallestNumber = arrNumber;
+        }
+    }
+    return smallestNumber;
+}
+
+function findSmallestInteger() {
+    const numbersString = document.getElementById("numberInput").value;
+    const arrayOfNumbers = numbersString.split(',').map(Number);
+    
+    if (arrayOfNumbers.length === 0) {
+        document.getElementById("result").innerText = "Please enter some numbers.";
+        return;
+    }
+
+    const smallest = findSmallestInt(arrayOfNumbers);
+    document.getElementById("result").innerText = "The smallest integer is: " + smallest;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Average</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid rgb(201, 46, 46);
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Array Average</h2>
+
+    <p>Enter numbers:</p>
+    <input type="text" id="numbersInput">
+    <button onclick="calculateAverage()">Calculate Average</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function calculateAverage() {
+    const numbersInput = document.getElementById("numbersInput").value;
+    const numbersArray = numbersInput.split(',').map(Number);
+    
+    if (numbersArray.length === 0 || numbersArray.some(isNaN)) {
+        document.getElementById("result").innerText = "Please enter valid numbers.";
+        return;
+    }
+
+    let sum = 0;
+    for (let i = 0; i < numbersArray.length; i++) {
+        sum += numbersArray[i];
+    }
+    const average = sum / numbersArray.length;
+    document.getElementById("result").innerText = "The average is: " + average.toFixed(2);
+}
+</script>
+
+</body>
+</html>

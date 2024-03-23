@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiply</title>
+</head>
+<body>
+    <h1 style="background-color:palevioletred; text-align: center;">MULTIPLICATION</h1>
+    
+    <div style="text-align: center;">
+        <label style="color: blue;" for="num1">Enter the first number:</label>
+        <input type="number" id="num1">
+        <br>
+        <label style="color:blue;"  for="num2">Enter the second number:</label>
+        <input type="number" id="num2">
+        <br>
+        <button onclick="multiplyNumbers()" style="background-color: green; color: white;">Multiply</button>
+    </div>
+
+    <div id="result" style="text-align: center; background-color: rgb(172, 124, 22); border:20px;"></div>
+    
+    <script>
+        function multiplyNumbers() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var result = num1 * num2;
+            document.getElementById('result').innerHTML = '<h2> Result is: ' + result + '</h2>';
+        }
+    </script>
+</body>
+</html>
+
+

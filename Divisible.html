@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divisible Check</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Divisible Check</h2>
+
+    <p>Enter a number:</p>
+    <input type="number" id="numberInput">
+    <p>Enter two divisors:</p>
+    <input type="number" id="x" placeholder="x">
+    <input type="number" id="y" placeholder="y">
+    <button onclick="checkDivisibility()">Check</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function checkDivisibility() {
+    const number = parseInt(document.getElementById("numberInput").value);
+    const x = parseInt(document.getElementById("x").value);
+    const y = parseInt(document.getElementById("y").value);
+
+    if (number % x === 0 && number % y === 0) {
+        document.getElementById("result").innerText = number + " is divisible by both " + x + " and " + y + ".";
+    } else {
+        document.getElementById("result").innerText = number + " is not divisible by both " + x + " and " + y + ".";
+    }
+}
+</script>
+
+</body>
+</html>
+

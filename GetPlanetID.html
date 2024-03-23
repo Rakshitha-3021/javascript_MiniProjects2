@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Planet Name</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid black;
+        padding: 50px;
+    }
+    #result {
+        margin-top: 10px;
+    }
+    .planet-name {
+        color: red ; /* Change to your desired color */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Get Planet Name</h2>
+
+    <p>Enter a planet ID (1-8):</p>
+    <input type="number" id="planetIdInput" min="1" max="8">
+    <button onclick="displayPlanetName()">Get Name</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function getPlanetName(id) {
+    var name;
+    switch(id){
+        case 1:
+            name="Mercury";
+            break;
+        case 2:
+            name="Venus";
+            break;
+        case 3:
+            name="Earth";
+            break;
+        case 4:
+            name="Mars";
+            break;
+        case 5:
+            name="Jupiter";
+            break;
+        case 6:
+            name="Saturn";
+            break;
+        case 7:
+            name="Uranus";
+            break;
+        case 8:
+            name="Neptune";
+            break;
+        default:
+            name = "Unknown";
+    }
+    return name;
+}
+
+function displayPlanetName() {
+    const planetId = parseInt(document.getElementById("planetIdInput").value);
+    const planetName = getPlanetName(planetId);
+    document.getElementById("result").innerHTML = "The name of planet with ID " + planetId + " is <span class='planet-name'>" + planetName + "</span>.";
+}
+</script>
+
+</body>
+</html>
+

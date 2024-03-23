@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Problems</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid black;
+        padding: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Math Problems</h2>
+    <p>Click the button below to generate and solve a random math problem:</p>
+    <button onclick="generateProblem()">Generate Problem</button>
+    <p id="problem"></p>
+    <p id="solution"></p>
+</div>
+
+<script>
+function generateProblem() {
+    const num1 = Math.floor(Math.random() * 100) + 1; 
+    const num2 = Math.floor(Math.random() * 100) + 1; 
+    const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)]; 
+    
+    let problem = num1 + ' ' + operator + ' ' + num2;
+    let solution;
+    switch (operator) {
+        case '+':
+            solution = num1 + num2;
+            break;
+        case '-':
+            solution = num1 - num2;
+            break;
+        case '*':
+            solution = num1 * num2;
+            break;
+        case '/':
+            solution = num1 / num2;
+            break;
+        default:
+            break;
+    }
+
+    document.getElementById("problem").innerText = "Problem: " + problem;
+    document.getElementById("solution").innerText = "Solution: " + solution;
+}
+</script>
+
+</body>
+</html>

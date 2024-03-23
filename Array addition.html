@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Addition</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Array Addition</h2>
+    <p>Array 1: [1, 2, 3, 4, 5]</p>
+    <p>Array 2: [6, 7, 8, 9, 10]</p>
+    <button onclick="addArrays()">Add Arrays</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function arrayAddition(array1, array2) {
+    if (array1.length !== array2.length) {
+        return "Arrays must have the same length.";
+    }
+
+    const resultArray = [];
+    for (let i = 0; i < array1.length; i++) {
+        resultArray.push(array1[i] + array2[i]);
+    }
+    return resultArray;
+}
+
+function addArrays() {
+    const array1 = [1, 2, 3, 4, 5];
+    const array2 = [6, 7, 8, 9, 10];
+    const result = arrayAddition(array1, array2);
+    document.getElementById("result").innerText = "Result: " + result;
+}
+</script>
+
+</body>
+</html>

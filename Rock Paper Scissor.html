@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper Scissors</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid red;
+        padding: 20px;
+    }
+    input[type="text"] {
+        margin: 10px;
+        padding: 8px;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Rock Paper Scissors</h2>
+    <input type="text" id="player1Choice" placeholder="Player 1's choice">
+    <input type="text" id="player2Choice" placeholder="Player 2's choice">
+    <button onclick="play()">Play</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function play() {
+    const player1Choice = document.getElementById("player1Choice").value.toLowerCase();
+    const player2Choice = document.getElementById("player2Choice").value.toLowerCase();
+
+    if (!isValidChoice(player1Choice) || !isValidChoice(player2Choice)) {
+        document.getElementById("result").innerText = "Please enter valid choices (rock, paper, or scissors).";
+        return;
+    }
+
+    let result;
+    if (player1Choice === player2Choice) {
+        result = "It's a tie!";
+    } else if (
+        (player1Choice === 'rock' && player2Choice === 'scissors') ||
+        (player1Choice === 'paper' && player2Choice === 'rock') ||
+        (player1Choice === 'scissors' && player2Choice === 'paper')
+    ) {
+        result = "Player 1 wins!";
+    } else {
+        result = "Player 2 wins!";
+    }
+
+    document.getElementById("result").innerText = "Player 1 chose " + player1Choice + ". Player 2 chose " + player2Choice + ". " + result;
+}
+
+function isValidChoice(choice) {
+    return choice === 'rock' || choice === 'paper' || choice === 'scissors';
+}
+</script>
+
+</body>
+</html>
+

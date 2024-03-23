@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Spaces</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Remove Spaces</h2>
+    <button onclick="removeSpaces()">Remove Spaces</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function removeSpaces() {
+    const inputString = prompt('Enter a string:');
+    const stringWithoutSpaces = inputString.replace(/\s/g, '');
+    document.getElementById("result").innerText = "String without spaces: " + stringWithoutSpaces;
+}
+</script>
+
+</body>
+</html>

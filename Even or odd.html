@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Negative Number Converter</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid red;
+        padding: 50px;
+    }
+    .convert-button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .convert-button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Negative Number Converter</h2>
+
+    <p>Enter a number:</p>
+    <input type="number" id="numberInput">
+    <button class="convert-button" onclick="convertToNegative()">Convert</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function negative(num) {
+    if (num < 0) {
+        return num;
+    }
+    return num * -1;
+}
+
+function convertToNegative() {
+    const num = parseInt(document.getElementById("numberInput").value);
+    const result = negative(num);
+    document.getElementById("result").innerText = "Converted number: " + result;
+}
+</script>
+
+</body>
+</html>

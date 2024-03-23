@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Remover</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        border: 5px solid red ;
+        padding: 50px;
+    }
+    input[type="text"] {
+        margin: 10px;
+        padding: 8px;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        color: greenyellow;
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Character Remover</h2>
+    <p>Enter a string:</p>
+    <input type="text" id="inputString" placeholder="Enter string">
+    <p>Enter characters to remove:</p>
+    <input type="text" id="charactersToRemove" placeholder="Characters to remove">
+    <button onclick="removeCharacters()">Remove Characters</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function removeCharacters() {
+    const inputString = document.getElementById("inputString").value;
+    const charactersToRemove = document.getElementById("charactersToRemove").value;
+
+    const resultString = inputString.split('').filter(char => !charactersToRemove.includes(char)).join('');
+
+    document.getElementById("result").innerText = "Result: " + resultString;
+}
+</script>
+
+</body>
+</html>
